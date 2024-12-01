@@ -20,6 +20,12 @@ public class ProductController {
 
 	@Autowired
 	private P_roductService ProductService;
+
+	@PostMapping("/products")
+	public Product addProduct(@RequestBody Product Product) {
+		
+		return this.ProductService.addProduct(Product);
+	}
 	
 	@GetMapping("/products")
 	public List<Product> getAllProduct(@RequestParam(value="page",defaultValue="1",required=false
@@ -40,12 +46,6 @@ public class ProductController {
 	public void deleteProduct(@PathVariable int productId) {
 		
 		this.ProductService.deleteProduct(productId);
-	}
-	
-	@PostMapping("/products")
-	public Product addProduct(@RequestBody Product Product) {
-		
-		return this.ProductService.addProduct(Product);
 	}
 	
 	@PutMapping("/products")
