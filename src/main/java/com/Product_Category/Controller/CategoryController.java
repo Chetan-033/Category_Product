@@ -19,6 +19,12 @@ public class CategoryController {
 	
 	@Autowired
 	private Category_Service categoryService;
+
+	@PostMapping("/categories")
+	public Category addCategory(@RequestBody Category category) {
+		
+		return this.categoryService.addCategory(category);
+	}
 	
 	@GetMapping("/categories")
 	public List<Category> getAllCategory(@RequestParam(value="page",defaultValue="1",required=false
@@ -39,12 +45,6 @@ public class CategoryController {
 	public void deleteCategory(@PathVariable int CataegoryId) {
 		
 		this.categoryService.deleteCategory(CataegoryId);
-	}
-	
-	@PostMapping("/categories")
-	public Category addCategory(@RequestBody Category category) {
-		
-		return this.categoryService.addCategory(category);
 	}
 	
 	@PutMapping("/categories")
