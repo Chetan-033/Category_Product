@@ -17,7 +17,8 @@ public class ImplementingProductService implements P_roductService {
 	
 	@Autowired
 	private P_roductRepository Product_Repository;
-
+	
+	//get all record with pagination
 	@Override
 	public List<Product> getAllProduct(Integer page, Integer pageSize) {
 		Pageable pageable =PageRequest.of(page, pageSize);
