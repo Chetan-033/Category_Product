@@ -1,4 +1,4 @@
-**Category-Product Management System**
+**Category-Product Task**
 A Spring Boot application with CRUD operations for managing categories and products, featuring a one-to-many relationship (one category can have multiple products) and server-side pagination.
 
 Key Features:
